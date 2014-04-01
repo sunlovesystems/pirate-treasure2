@@ -165,6 +165,10 @@
 }
 
 // This method needs work; there must be a better way to do this
+
+//
+// jcartier: have a look at the MVC pattern, and how it might help encapsulate some of this logic.
+//
 -(void)updateTiles
 {
     if (self.currentPoint.x == 0 && self.currentPoint.y == 0) {
