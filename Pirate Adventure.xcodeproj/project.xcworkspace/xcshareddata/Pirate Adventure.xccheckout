@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C92DBDF5-3FA0-453D-AB00-1D71F21AFC6B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pirate Adventure</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3AC09F10-9E6A-4CB3-A846-F2AED2AD3BCA</key>
+		<string>https://github.com/sunlovesystems/pirate-treasure2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pirate Adventure.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3AC09F10-9E6A-4CB3-A846-F2AED2AD3BCA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sunlovesystems/pirate-treasure2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3AC09F10-9E6A-4CB3-A846-F2AED2AD3BCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AC09F10-9E6A-4CB3-A846-F2AED2AD3BCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pirate Adventure</string>
+		</dict>
+	</array>
+</dict>
+</plist>

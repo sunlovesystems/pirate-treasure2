@@ -164,84 +164,18 @@
     [self viewDidLoad];
 }
 
-// This method needs work; there must be a better way to do this
+// Fixed it like this; any suggestions or thoughts?
 -(void)updateTiles
 {
-    if (self.currentPoint.x == 0 && self.currentPoint.y == 0) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:0];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 0 && self.currentPoint.y == 1) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:1];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 0 && self.currentPoint.y == 2) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:2];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 1 && self.currentPoint.y == 0) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:3];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 1 && self.currentPoint.y == 1) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:4];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 1 && self.currentPoint.y == 2) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:5];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 2 && self.currentPoint.y == 0) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:6];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 2 && self.currentPoint.y == 1) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:7];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 2 && self.currentPoint.y == 2) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:8];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 3 && self.currentPoint.y == 0) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:9];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 3 && self.currentPoint.y == 1) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:10];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else if (self.currentPoint.x == 3 && self.currentPoint.y == 2) {
-        CCTile *newTile = [self.tilesArray objectAtIndex:11];
-        self.storyLabel.text = newTile.story;
-        self.backgroundImage.image = newTile.background;
-        [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
-        self.currentTile = newTile;
-    } else {
-        NSLog(@"That is not a valid location.");
-    }
+    NSPredicate *cp = [NSPredicate predicateWithBlock: ^BOOL(id obj, NSDictionary *bind) {
+        return (((CGPoint)[obj currentPoint]).y == self.currentPoint.y && ((CGPoint)[obj currentPoint]).x == self.currentPoint.x);
+    }];
+    NSArray *newTileArray = [_tilesArray filteredArrayUsingPredicate:cp];
+    CCTile *newTile = [newTileArray objectAtIndex:0];
+    self.storyLabel.text = newTile.story;
+    self.backgroundImage.image = newTile.background;
+    [self.actionButtonName setTitle:newTile.actionButtonName forState:UIControlStateNormal];
+    self.currentTile = newTile;
 }
 
 @end
